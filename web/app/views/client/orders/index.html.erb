@@ -1,0 +1,37 @@
+<div class="app">
+  <div class="app__form">
+    <h1>Client</h1>
+    <%= simple_form_for [:client, @order] do |f| %>
+      <%= f.input :location, collection: ['Location A', 'Location B', 'Location C'] %>
+      <%= f.input :commodity, collection: ['Commodity A', 'Commodity B', 'Commodity C'] %>
+      <%= f.input :quantity %>
+      <%= f.submit 'Place order', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="app__list">
+    <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Commodity</th>
+          <th>Quantity</th>
+          <th>Received?</th>
+          <th>Accepted?</th>
+          <th>Delivered?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.location %></td>
+            <td><%= order.commodity %></td>
+            <td><%= order.quantity %></td>
+            <td><%= order.received? %></td>
+            <td><%= order.accepted? %></td>
+            <td><%= order.delivered? %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

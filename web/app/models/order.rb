@@ -13,6 +13,6 @@ class Order < ApplicationRecord
   end
 
   def delivered?
-    received? && accepted? && order.delivered?
+    received? && accepted? && delivery.delivered?
   end
 end

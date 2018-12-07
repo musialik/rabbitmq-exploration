@@ -1,0 +1,19 @@
+version: "2"
+services:
+  rabbit:
+    environment:
+      - RABBITMQ_ERLANG_COOKIE='secret_cookie'
+    hostname: rabbit
+    image: "rabbitmq:3-management"
+    environment:
+      - "RABBITMQ_USER=user"
+      - "RABBITMQ_DEFAULT_USER=user"
+      - "RABBITMQ_PASS=user"
+      - "RABBITMQ_DEFAULT_PASS=user"
+    ports:
+      - "5672:5672"
+      - "8080:15672"
+    tty: true
+    volumes:
+      - ./volume:/var/lib/rabbitmq
+      # - ./conf/:/etc/rabbitmq/

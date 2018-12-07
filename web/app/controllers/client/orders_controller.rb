@@ -8,6 +8,7 @@ class Client::OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
+      Rabbit.publish(@order)
       redirect_to client_orders_path, notice: 'Order placed'
     else
       @orders = Order.all

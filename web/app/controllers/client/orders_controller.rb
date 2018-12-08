@@ -1,7 +1,8 @@
 class Client::OrdersController < ApplicationController
   def index
-    @order = Order.new
-    @orders = Order.all
+    @order = Order.new(location: 'Location A', commodity: 'Commodity A', quantity: 10)
+    @orders = Order.all.order(created_at: :desc).limit(20)
+    @deliveries = Delivery.includes(:orders).all.order(created_at: :desc).limit(20)
   end
 
   def create
@@ -9,6 +10,7 @@ class Client::OrdersController < ApplicationController
 
     if @order.save
       Rabbit.publish(@order)
+      @order.update!(ack: true)
       redirect_to client_orders_path, notice: 'Order placed'
     else
       @orders = Order.all

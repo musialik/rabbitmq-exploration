@@ -1,21 +1,17 @@
 class DeliveryScheduler
   include Sneakers::Worker
-  from_queue :orders,
+  from_queue :batches,
     timeout_job_after: 15,
     prefetch: 1,
     durable: true,
     ack: true
 
-  def work(order)
-    hash = JSON.parse(order)
-    order = Order.find(hash['id'])
-    order.update!(ack: true)
-
-    sleep 5
+  def work(ids)
+    orders = Order.where(id: JSON.parse(ids))
 
     Order.transaction do
       delivery = Delivery.create!
-      order.update!(delivery: delivery)
+      orders.update_all(delivery_id: delivery.id)
       ack!
     end
   end

@@ -1,23 +1,27 @@
 <div class="app">
   <div class="app__form">
-    <h1>Client</h1>
-    <%= simple_form_for [:client, @order] do |f| %>
-      <%= f.input :location, collection: ['Location A', 'Location B', 'Location C'] %>
-      <%= f.input :commodity, collection: ['Commodity A', 'Commodity B', 'Commodity C'] %>
-      <%= f.input :quantity %>
-      <%= f.submit 'Place order', class: 'btn btn-primary' %>
-    <% end %>
+    <div class="app__header">
+      <h2>1. Make some orders</h2>
+    </div>
+
+    <%= render 'form', order: Order.new(location: 'Office', commodity: 'Pen', quantity: 10), message: '10 pens to office' %>
+    <%= render 'form', order: Order.new(location: 'Office', commodity: 'Chair', quantity: 2), message: '2 chairs to office' %>
+    <%= render 'form', order: Order.new(location: 'Storage', commodity: 'Hat', quantity: 5), message: '5 hats to storage' %>
+    <%= render 'form', order: Order.new(location: 'Storage', commodity: 'Pen', quantity: 8), message: '8 pens to storage' %>
   </div>
+
   <div class="app__list">
+    <div class="app__header">
+      <h2>2. See the raw orders <small>(reload the page to see status changes)</small></h2>
+    </div>
+
     <table>
       <thead>
         <tr>
           <th>Location</th>
           <th>Commodity</th>
           <th>Quantity</th>
-          <th>Received?</th>
-          <th>Accepted?</th>
-          <th>Delivered?</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -26,9 +30,35 @@
             <td><%= order.location %></td>
             <td><%= order.commodity %></td>
             <td><%= order.quantity %></td>
-            <td><%= order.received? %></td>
-            <td><%= order.accepted? %></td>
-            <td><%= order.delivered? %></td>
+            <td><%= order.status %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="app__list">
+    <div class="app__header">
+      <h2>3. Wait for batches to appear <small>(grouped by location; batches are created every 5 seconds; max batch size is 5 orders)</small></h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @deliveries.each do |delivery| %>
+          <tr>
+            <td><%= delivery.orders.first.location %></td>
+            <td>
+              <% delivery.orders.group_by(&:commodity).map do |commodity, orders| %>
+                <%= "#{commodity}: #{orders.map(&:quantity).map(&:to_i).sum()}" %>
+                <br/>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

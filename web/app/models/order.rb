@@ -4,15 +4,10 @@ class Order < ApplicationRecord
   validates :commodity, :location, :quantity, presence: true
   validates :quantity, numericality: { less_than_or_equal_to: 100, greater_than: 0 }
 
-  def received?
-    ack?
-  end
-
-  def accepted?
-    received? && delivery.present?
-  end
-
-  def delivered?
-    received? && accepted? && delivery.delivered?
+  def status
+    return 'waiting' unless ack?
+    return 'processing' if delivery.nil?
+    return 'in delivery' unless delivery.delivered?
+    'delivered'
   end
 end

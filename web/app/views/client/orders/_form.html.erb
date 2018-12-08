@@ -1,0 +1,6 @@
+<%= simple_form_for [:client, order] do |f| %>
+  <%= f.input :location, as: :hidden %>
+  <%= f.input :commodity, as: :hidden %>
+  <%= f.input :quantity, as: :hidden %>
+  <%= f.submit message, class: 'btn btn-primary' %>
+<% end %>

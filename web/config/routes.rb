@@ -4,8 +4,4 @@ Rails.application.routes.draw do
   namespace :client do
     resources :orders
   end
-
-  namespace :carrier do
-    resources :orders
-  end
 end

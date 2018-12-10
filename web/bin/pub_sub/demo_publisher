@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require 'bunny'
+
+
+connection = Bunny.new
+connection.start
+
+channel = connection.create_channel
+exchange = channel.direct('logs')
+
+puts "Configure severity for messages"
+severity = gets.strip!
+
+while true
+  puts "Provide a message to be sent"
+  message = gets.strip!
+  exchange.publish(message, routing_key: severity)
+  puts " [x] #{severity.upcase}: #{message}"
+end
+
+connection.close

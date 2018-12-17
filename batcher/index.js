@@ -1,5 +1,8 @@
 const amqp = require('amqplib/callback_api')
 
+const exchangeName = 'rabbits'
+const sourceTopic = 'orders.created'
+
 let buffer = {}
 let timers = {}
 let channel
@@ -39,28 +42,36 @@ function clearBuffer (location) {
   delete timers[location]
   delete buffer[location]
 
-  channel.sendToQueue('batches', orders, { persistent: true })
+  channel.publish('rabbits', 'batches.prepared', orders)
   console.log(` [x] batch ready for ${location}`)
 }
 
 amqp.connect('amqp://localhost', function(err, conn) {
   conn.createChannel(function(err, ch) {
     channel = ch
-    channel.assertQueue('batches', {durable: true})
-    channel.assertQueue('orders', {durable: true})
-    channel.prefetch(1)
 
-    console.log(" [*] Waiting for new orders. To exit press CTRL+C")
+    channel.assertExchange(exchangeName, 'topic', { durable: true })
+    channel.assertQueue('batcher', { durable: true }, (err, q) => {
+      ch.bindQueue(q.queue, exchangeName, sourceTopic)
 
-    channel.consume('orders', function(msg) {
-      const order = JSON.parse(msg.content)
-      const { commodity, quantity, location } = order
+      channel.prefetch(1)
 
-      console.log(` [x] Received an order for ${commodity} [${quantity}] from ${location}`)
+      console.log(" [*] Waiting for new orders. To exit press CTRL+C")
 
-      processOrder(order)
+      channel.consume(
+        'batcher',
+        (msg) => {
+          const order = JSON.parse(msg.content)
+          const { commodity, quantity, location } = order
 
-      channel.ack(msg)
-    }, { noAck: false })
+          console.log(` [x] Received an order for ${commodity} [${quantity}] from ${location}`)
+
+          processOrder(order)
+
+          channel.ack(msg)
+        },
+        { noAck: false }
+      )
+    })
   })
 })

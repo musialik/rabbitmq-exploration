@@ -1,7 +1,9 @@
 class DeliveryScheduler
   include Sneakers::Worker
-  from_queue :batches,
+
+  from_queue 'web.delivery_scheduler',
     timeout_job_after: 15,
+    threads: 5,
     prefetch: 1,
     durable: true,
     ack: true

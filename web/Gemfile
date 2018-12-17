@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form'
 gem 'bunny'
+gem 'connection_pool'
 gem 'sneakers'
 
 group :development, :test do

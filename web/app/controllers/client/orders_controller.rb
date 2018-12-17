@@ -9,7 +9,7 @@ class Client::OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
-      Rabbit.publish(@order)
+      EventBus.order_created(@order)
       @order.update!(ack: true)
       redirect_to client_orders_path, notice: 'Order placed'
     else

@@ -10,4 +10,10 @@ class Order < ApplicationRecord
     return 'in delivery' unless delivery.delivered?
     'delivered'
   end
+
+  def as_json(args)
+    super.merge({
+      status: status
+    })
+  end
 end

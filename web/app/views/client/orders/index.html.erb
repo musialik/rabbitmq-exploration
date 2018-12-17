@@ -15,7 +15,7 @@
       <h2>2. See the raw orders <small>(reload the page to see status changes)</small></h2>
     </div>
 
-    <table>
+    <table id="orders-table">
       <thead>
         <tr>
           <th>Location</th>
@@ -26,7 +26,7 @@
       </thead>
       <tbody>
         <% @orders.each do |order| %>
-          <tr>
+          <tr id="order-<%= order.id %>">
             <td><%= order.location %></td>
             <td><%= order.commodity %></td>
             <td><%= order.quantity %></td>
@@ -42,7 +42,7 @@
       <h2>3. Wait for batches to appear <small>(grouped by location; batches are created every 5 seconds; max batch size is 5 orders)</small></h2>
     </div>
 
-    <table>
+    <table id="deliveries-table">
       <thead>
         <tr>
           <th>Location</th>
@@ -51,7 +51,7 @@
       </thead>
       <tbody>
         <% @deliveries.each do |delivery| %>
-          <tr>
+          <tr id="delivery-<%= delivery.id %>">
             <td><%= delivery.orders.first.location %></td>
             <td>
               <% delivery.orders.group_by(&:commodity).map do |commodity, orders| %>

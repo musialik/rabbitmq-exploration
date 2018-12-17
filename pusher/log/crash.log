@@ -1,0 +1,283 @@
+2018-12-17 21:58:23 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Phoenix.Channel.Server:init/1
+    pid: <0.433.0>
+    registered_name: []
+    exception error: {function_clause,[{'Elixir.PusherWeb.DeliveryChannel',join,[<<"deliveries">>,#{<<"token">> => <<"nothing">>},#{'__struct__' => 'Elixir.Phoenix.Socket',assigns => #{},channel => 'Elixir.PusherWeb.DeliveryChannel',channel_pid => <0.433.0>,endpoint => 'Elixir.PusherWeb.Endpoint',handler => 'Elixir.PusherWeb.UserSocket',id => nil,join_ref => <<"5">>,joined => false,private => #{log_handle_in => debug,log_join => info},pubsub_server => 'Elixir.Pusher.PubSub',ref => nil,serializer => 'Elixir.Phoenix.Socket.V2.JSONSerializer',topic => <<"deliveries">>,transport => websocket,transport_pid => <0.429.0>}],[{file,"lib/pusher_web/channels/delivery_channel.ex"},{line,4}]},{'Elixir.Phoenix.Channel.Server',init,1,[{file,"lib/phoenix/channel/server.ex"},{line,245}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.303.0>,<0.300.0>,'Elixir.PusherWeb.Endpoint','Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.303.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 231
+  neighbours:
+2018-12-17 21:58:25 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Phoenix.Channel.Server:init/1
+    pid: <0.434.0>
+    registered_name: []
+    exception error: {function_clause,[{'Elixir.PusherWeb.DeliveryChannel',join,[<<"deliveries">>,#{<<"token">> => <<"nothing">>},#{'__struct__' => 'Elixir.Phoenix.Socket',assigns => #{},channel => 'Elixir.PusherWeb.DeliveryChannel',channel_pid => <0.434.0>,endpoint => 'Elixir.PusherWeb.Endpoint',handler => 'Elixir.PusherWeb.UserSocket',id => nil,join_ref => <<"6">>,joined => false,private => #{log_handle_in => debug,log_join => info},pubsub_server => 'Elixir.Pusher.PubSub',ref => nil,serializer => 'Elixir.Phoenix.Socket.V2.JSONSerializer',topic => <<"deliveries">>,transport => websocket,transport_pid => <0.429.0>}],[{file,"lib/pusher_web/channels/delivery_channel.ex"},{line,4}]},{'Elixir.Phoenix.Channel.Server',init,1,[{file,"lib/phoenix/channel/server.ex"},{line,245}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.301.0>,<0.300.0>,'Elixir.PusherWeb.Endpoint','Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.301.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 216
+  neighbours:
+2018-12-17 21:58:30 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Phoenix.Channel.Server:init/1
+    pid: <0.435.0>
+    registered_name: []
+    exception error: {function_clause,[{'Elixir.PusherWeb.DeliveryChannel',join,[<<"deliveries">>,#{<<"token">> => <<"nothing">>},#{'__struct__' => 'Elixir.Phoenix.Socket',assigns => #{},channel => 'Elixir.PusherWeb.DeliveryChannel',channel_pid => <0.435.0>,endpoint => 'Elixir.PusherWeb.Endpoint',handler => 'Elixir.PusherWeb.UserSocket',id => nil,join_ref => <<"7">>,joined => false,private => #{log_handle_in => debug,log_join => info},pubsub_server => 'Elixir.Pusher.PubSub',ref => nil,serializer => 'Elixir.Phoenix.Socket.V2.JSONSerializer',topic => <<"deliveries">>,transport => websocket,transport_pid => <0.429.0>}],[{file,"lib/pusher_web/channels/delivery_channel.ex"},{line,4}]},{'Elixir.Phoenix.Channel.Server',init,1,[{file,"lib/phoenix/channel/server.ex"},{line,245}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.305.0>,<0.300.0>,'Elixir.PusherWeb.Endpoint','Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.305.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 214
+  neighbours:
+2018-12-17 21:59:40 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":203,\"commodity\":\"Hat\",\"quantity\":\"5\",\"location\":\"Storage\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T20:59:39.996Z\",\"updated_at\":\"2018-12-17T20:59:39.996Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-nO_KYq_lcFJ3Stx0hsu1LA">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 2,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.415.0>},pid => <0.426.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.415.0>},queue => <<"amq.gen-zNn8r_7hHq_XV3R42W0Mtg">>}
+** Reason for termination == 
+** {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T20:59:39.996Z">>,<<"delivery_id">> => nil,<<"id">> => 203,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T20:59:39.996Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 21:59:40 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.412.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T20:59:39.996Z">>,<<"delivery_id">> => nil,<<"id">> => 203,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T20:59:39.996Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.289.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 27
+    reductions: 28788
+  neighbours:
+2018-12-17 21:59:40 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T20:59:39.996Z">>,<<"delivery_id">> => nil,<<"id">> => 203,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T20:59:39.996Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.412.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 21:59:41 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":204,\"commodity\":\"Chair\",\"quantity\":\"2\",\"location\":\"Office\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T20:59:41.235Z\",\"updated_at\":\"2018-12-17T20:59:41.235Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-cb46Bj86yg_ng7bH9PsE8A">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.465.0>},pid => <0.474.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.465.0>},queue => <<"amq.gen-6_cukKgX2vjbWDsmDthTLA">>}
+** Reason for termination == 
+** {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T20:59:41.235Z">>,<<"delivery_id">> => nil,<<"id">> => 204,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T20:59:41.235Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 21:59:41 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.462.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T20:59:41.235Z">>,<<"delivery_id">> => nil,<<"id">> => 204,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T20:59:41.235Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.289.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 31388
+  neighbours:
+2018-12-17 21:59:41 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T20:59:41.235Z">>,<<"delivery_id">> => nil,<<"id">> => 204,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T20:59:41.235Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.462.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 21:59:41 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":205,\"commodity\":\"Pen\",\"quantity\":\"10\",\"location\":\"Office\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T20:59:41.619Z\",\"updated_at\":\"2018-12-17T20:59:41.619Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-JcOIEg3tDj3vC_ISokdD_Q">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.480.0>},pid => <0.489.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.480.0>},queue => <<"amq.gen-V--K_rdiim8oTK9pD6JXZw">>}
+** Reason for termination == 
+** {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:41.619Z">>,<<"delivery_id">> => nil,<<"id">> => 205,<<"location">> => <<"Office">>,<<"quantity">> => <<"10">>,<<"updated_at">> => <<"2018-12-17T20:59:41.619Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 21:59:41 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.477.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:41.619Z">>,<<"delivery_id">> => nil,<<"id">> => 205,<<"location">> => <<"Office">>,<<"quantity">> => <<"10">>,<<"updated_at">> => <<"2018-12-17T20:59:41.619Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.289.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 6772
+    stack_size: 27
+    reductions: 31355
+  neighbours:
+2018-12-17 21:59:41 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:41.619Z">>,<<"delivery_id">> => nil,<<"id">> => 205,<<"location">> => <<"Office">>,<<"quantity">> => <<"10">>,<<"updated_at">> => <<"2018-12-17T20:59:41.619Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.477.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 21:59:53 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":206,\"commodity\":\"Pen\",\"quantity\":\"8\",\"location\":\"Storage\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T20:59:53.340Z\",\"updated_at\":\"2018-12-17T20:59:53.340Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-9o9aXMJGQfzAlnLcbZstwQ">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.495.0>},pid => <0.504.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.495.0>},queue => <<"amq.gen-D1ZltuLPy9-no4AZf9w5yg">>}
+** Reason for termination == 
+** {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:53.340Z">>,<<"delivery_id">> => nil,<<"id">> => 206,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T20:59:53.340Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 21:59:53 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.492.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:53.340Z">>,<<"delivery_id">> => nil,<<"id">> => 206,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T20:59:53.340Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.288.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.289.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 6772
+    stack_size: 27
+    reductions: 31378
+  neighbours:
+2018-12-17 21:59:53 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {{badkey,id,#{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T20:59:53.340Z">>,<<"delivery_id">> => nil,<<"id">> => 206,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T20:59:53.340Z">>}},[{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.492.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 22:00:43 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":208,\"commodity\":\"Chair\",\"quantity\":\"2\",\"location\":\"Office\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T21:00:43.628Z\",\"updated_at\":\"2018-12-17T21:00:43.628Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-xovZQ9_YJBz2Y-LcZ5a3-A">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.409.0>},pid => <0.420.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.409.0>},queue => <<"amq.gen-C5wTu2jQMOR2YV8V_pU3Dg">>}
+** Reason for termination == 
+** {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T21:00:43.628Z">>,<<"delivery_id">> => nil,<<"id">> => 208,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T21:00:43.628Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 22:00:43 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.406.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T21:00:43.628Z">>,<<"delivery_id">> => nil,<<"id">> => 208,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T21:00:43.628Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.282.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.283.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 42858
+  neighbours:
+2018-12-17 22:00:43 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Chair">>,<<"created_at">> => <<"2018-12-17T21:00:43.628Z">>,<<"delivery_id">> => nil,<<"id">> => 208,<<"location">> => <<"Office">>,<<"quantity">> => <<"2">>,<<"updated_at">> => <<"2018-12-17T21:00:43.628Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.406.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 22:00:44 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":209,\"commodity\":\"Hat\",\"quantity\":\"5\",\"location\":\"Storage\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T21:00:44.407Z\",\"updated_at\":\"2018-12-17T21:00:44.407Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-zTCHdHp6ZJ_91orlBF96bg">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.436.0>},pid => <0.445.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.436.0>},queue => <<"amq.gen-EOHXqlRg-tajrOHea5oyKg">>}
+** Reason for termination == 
+** {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T21:00:44.407Z">>,<<"delivery_id">> => nil,<<"id">> => 209,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T21:00:44.407Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 22:00:44 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.433.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T21:00:44.407Z">>,<<"delivery_id">> => nil,<<"id">> => 209,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T21:00:44.407Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.282.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.283.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 34674
+  neighbours:
+2018-12-17 22:00:44 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Hat">>,<<"created_at">> => <<"2018-12-17T21:00:44.407Z">>,<<"delivery_id">> => nil,<<"id">> => 209,<<"location">> => <<"Storage">>,<<"quantity">> => <<"5">>,<<"updated_at">> => <<"2018-12-17T21:00:44.407Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.433.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 22:00:44 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":210,\"commodity\":\"Pen\",\"quantity\":\"8\",\"location\":\"Storage\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T21:00:44.867Z\",\"updated_at\":\"2018-12-17T21:00:44.867Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-pvCidBnSWNS59aUL7MLkCQ">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.451.0>},pid => <0.460.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.451.0>},queue => <<"amq.gen-vCqyuBRBM2Wf473yoH443Q">>}
+** Reason for termination == 
+** {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:00:44.867Z">>,<<"delivery_id">> => nil,<<"id">> => 210,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:00:44.867Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 22:00:44 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.448.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:00:44.867Z">>,<<"delivery_id">> => nil,<<"id">> => 210,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:00:44.867Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.282.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.283.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 34678
+  neighbours:
+2018-12-17 22:00:44 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:00:44.867Z">>,<<"delivery_id">> => nil,<<"id">> => 210,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:00:44.867Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.448.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2018-12-17 22:01:14 =ERROR REPORT====
+** Generic server 'Elixir.Pusher.Subscriber' terminating 
+** Last message in was {basic_deliver,<<"{\"id\":211,\"commodity\":\"Pen\",\"quantity\":\"8\",\"location\":\"Storage\",\"delivery_id\":null,\"ack\":false,\"created_at\":\"2018-12-17T21:01:14.485Z\",\"updated_at\":\"2018-12-17T21:01:14.485Z\"}">>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-0gy_lXpa13mUbyXvVlgBsQ">>,content_encoding => undefined,content_type => <<"application/octet-stream">>,correlation_id => undefined,delivery_tag => 1,exchange => <<"rabbits">>,expiration => undefined,headers => undefined,message_id => undefined,persistent => true,priority => 0,redelivered => false,reply_to => undefined,routing_key => <<"orders.created">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{channel => #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.400.0>},pid => <0.411.0>},connection => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.400.0>},queue => <<"amq.gen-SEemQ7-8SECirgBD_kqBqA">>}
+** Reason for termination == 
+** {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:01:14.485Z">>,<<"delivery_id">> => nil,<<"id">> => 211,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:01:14.485Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2018-12-17 22:01:14 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Pusher.Subscriber:init/1
+    pid: <0.397.0>
+    registered_name: 'Elixir.Pusher.Subscriber'
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:01:14.485Z">>,<<"delivery_id">> => nil,<<"id">> => 211,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:01:14.485Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Pusher.Supervisor',<0.273.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.274.0>]
+    dictionary: [{gen_server_call_timeout,60000}]
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 38950
+  neighbours:
+2018-12-17 22:01:14 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Pusher.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.String.Chars',value => #{<<"ack">> => false,<<"commodity">> => <<"Pen">>,<<"created_at">> => <<"2018-12-17T21:01:14.485Z">>,<<"delivery_id">> => nil,<<"id">> => 211,<<"location">> => <<"Storage">>,<<"quantity">> => <<"8">>,<<"updated_at">> => <<"2018-12-17T21:01:14.485Z">>}},[{'Elixir.String.Chars','impl_for!',1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,3}]},{'Elixir.String.Chars',to_string,1,[{file,"/home/vagrant/2018-08-14_12-51-05/scripts/elixir/deb/elixir_1.7.2-1/lib/elixir/lib/string/chars.ex"},{line,22}]},{'Elixir.Pusher.Subscriber',handle_info,2,[{file,"lib/pusher/subscriber.ex"},{line,56}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,<0.397.0>},{id,'Elixir.Pusher.Subscriber'},{mfargs,{'Elixir.Pusher.Subscriber',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+

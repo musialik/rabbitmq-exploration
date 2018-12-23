@@ -59,6 +59,16 @@ services:
     ports:
       - "4000:4000"
 
+  logs:
+    build: ./logs
+    volumes:
+      - ./logs:/usr/app
+    depends_on:
+      - rabbit
+    environment:
+      - RABBITMQ_URL=amqp://user:user@rabbit:5672
+    command: mix run --no-halt
+
   rabbit:
     image: "rabbitmq:3-management"
     environment:

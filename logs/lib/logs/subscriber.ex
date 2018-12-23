@@ -24,8 +24,14 @@ defmodule Logs.Subscriber do
   end
 
   defp init_connection(%{} = state) do
-    {:ok, connection} = AMQP.Connection.open()
-    Map.put(state, :connection, connection)
+    case AMQP.Connection.open(System.get_env("RABBITMQ_URL")) do
+      {:error, :econnrefused} ->
+        IO.puts("Rabbit connection failed. Retrying in 5s")
+        :timer.sleep(5000)
+        init_connection(state)
+      {:ok, connection} ->
+        Map.put(state, :connection, connection)
+    end
   end
 
   defp init_channel(%{connection: connection} = state) do

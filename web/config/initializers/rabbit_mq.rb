@@ -7,6 +7,6 @@ EventBus.start
 EventBus.configure_worker_queues
 
 # Cleanup
-trap('TERM') { EventBus.stop }
+# trap('TERM') { EventBus.stop }
 
 Sneakers.configure(exchange: 'rabbits', exchange_type: 'topic')

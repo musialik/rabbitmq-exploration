@@ -1,15 +1,70 @@
 version: "2"
 services:
-  rabbit:
+  web:
+    build: ./web
     environment:
-      - RABBITMQ_ERLANG_COOKIE='secret_cookie'
-    hostname: rabbit
+      - DB_HOST=db
+      - DB_USER=rabbits
+      - RABBITMQ_URL=amqp://user:user@rabbit:5672
+    entrypoint: ./bin/setup
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - rabbit
+    volumes:
+      - ./web:/usr/app
+      - /usr/app/tmp/pids
+
+  webpacker:
+    build: ./web
+    entrypoint: ./bin/webpack-dev-server
+    ports:
+      - "3035:3035"
+    volumes:
+      - ./web:/usr/app
+      - /usr/app/tmp/pids
+
+  worker:
+    build: ./web
+    entrypoint: bundle exec rake sneakers:run
+    environment:
+      - DB_HOST=db
+      - DB_USER=rabbits
+      - WORKERS=DeliveryScheduler
+      - RABBITMQ_URL=amqp://user:user@rabbit:5672
+    volumes:
+      - ./web:/usr/app
+      - /usr/app/tmp/pids
+
+  batcher:
+    build: ./batcher
+    volumes:
+      - ./batcher:/usr/app
+    depends_on:
+      - rabbit
+    environment:
+      - RABBITMQ_URL=amqp://user:user@rabbit:5672
+    command: npm start
+
+  pusher:
+    build: ./pusher
+    volumes:
+      - ./pusher:/usr/app
+    depends_on:
+      - rabbit
+    environment:
+      - RABBITMQ_URL=amqp://user:user@rabbit:5672
+    command: mix phx.server
+    ports:
+      - "4000:4000"
+
+  rabbit:
     image: "rabbitmq:3-management"
     environment:
-      - "RABBITMQ_USER=user"
-      - "RABBITMQ_DEFAULT_USER=user"
-      - "RABBITMQ_PASS=user"
-      - "RABBITMQ_DEFAULT_PASS=user"
+      - RABBITMQ_ERLANG_COOKIE=secret_cookie
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=user
     ports:
       - "5672:5672"
       - "8080:15672"
@@ -17,3 +72,8 @@ services:
     volumes:
       - .volumes/rabbit/main/:/var/lib/rabbitmq
       # - .volumes/rabbit/conf/:/etc/rabbitmq/
+
+  db:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: rabbits

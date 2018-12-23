@@ -1,20 +1,29 @@
 class EventBus
+  class ConnectionFailed < StandardError; end
   # These values could be extracted to .env in a real app
   CHANNEL_POOL_SIZE = 5 # These many channels will be shared between Puma/Sneakers threads
   CHANNEL_POOL_TIMEOUT = 5
 
   # Stores the provided Bunny connection and sets up a channel pool
-  def self.start
-    @conn = Bunny.new
+  def self.start(retries = 0)
+    @conn = Bunny.new(ENV.fetch('RABBITMQ_URL'))
     @conn.start
     @pool = ConnectionPool.new(size: CHANNEL_POOL_SIZE, timeout: CHANNEL_POOL_TIMEOUT) { conn.create_channel }
     @pool.with { |channel| channel.topic('rabbits', durable: true) }
+  rescue Bunny::TCPConnectionFailed, Bunny::TCPConnectionFailedForAllHosts => e
+    raise ConnectionFailed if retries >= 5
+    sleep 5
+    start(retries + 1)
   end
 
   # If I understand it correctly, this connection will be shared between threads in a worker. So each puma worker
   # will have one connection and threads will use channels from a pool. Which is exactly what we need.
   def self.conn
     @conn
+  end
+
+  def reloadable?
+    false
   end
 
   # One place to bind worker queues to the right topics
@@ -31,7 +40,6 @@ class EventBus
   end
 
   def self.pool
-    start unless @pool
     @pool
   end
 

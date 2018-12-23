@@ -46,32 +46,44 @@ function clearBuffer (location) {
   console.log(` [x] batch ready for ${location}`)
 }
 
-amqp.connect('amqp://localhost', function(err, conn) {
-  conn.createChannel(function(err, ch) {
-    channel = ch
+function start () {
+  console.log('Attempting start, ' + (new Date()))
+  amqp.connect(process.env.RABBITMQ_URL, function(err, conn) {
+    if (err) {
+      console.error(err)
+      console.log('Connection failed. Retrying in 5s')
+      setTimeout(start, 5000)
+      return
+    }
 
-    channel.assertExchange(exchangeName, 'topic', { durable: true })
-    channel.assertQueue('batcher', { durable: true }, (err, q) => {
-      ch.bindQueue(q.queue, exchangeName, sourceTopic)
+    conn.createChannel(function(err, ch) {
+      channel = ch
 
-      channel.prefetch(1)
+      channel.assertExchange(exchangeName, 'topic', { durable: true })
+      channel.assertQueue('batcher', { durable: true }, (err, q) => {
+        ch.bindQueue(q.queue, exchangeName, sourceTopic)
 
-      console.log(" [*] Waiting for new orders. To exit press CTRL+C")
+        channel.prefetch(1)
 
-      channel.consume(
-        'batcher',
-        (msg) => {
-          const order = JSON.parse(msg.content)
-          const { commodity, quantity, location } = order
+        console.log(" [*] Waiting for new orders. To exit press CTRL+C")
 
-          console.log(` [x] Received an order for ${commodity} [${quantity}] from ${location}`)
+        channel.consume(
+          'batcher',
+          (msg) => {
+            const order = JSON.parse(msg.content)
+            const { commodity, quantity, location } = order
 
-          processOrder(order)
+            console.log(` [x] Received an order for ${commodity} [${quantity}] from ${location}`)
 
-          channel.ack(msg)
-        },
-        { noAck: false }
-      )
+            processOrder(order)
+
+            channel.ack(msg)
+          },
+          { noAck: false }
+        )
+      })
     })
   })
-})
+}
+
+start()

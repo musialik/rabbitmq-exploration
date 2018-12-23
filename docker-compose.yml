@@ -15,5 +15,5 @@ services:
       - "8080:15672"
     tty: true
     volumes:
-      - ./volume:/var/lib/rabbitmq
-      # - ./conf/:/etc/rabbitmq/
+      - .volumes/rabbit/main/:/var/lib/rabbitmq
+      # - .volumes/rabbit/conf/:/etc/rabbitmq/
